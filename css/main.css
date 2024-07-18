@@ -1,6 +1,6 @@
 *,
 *::before,
-*::after { 
+*::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,20 +8,129 @@
     border: none;
 }
 
-html, 
+html,
 body {
-    height: 100%; /*mobile bottom padding accounted for*/
-    background-color: rgb(191, 221, 255);
+    /*mobile bottom padding accounted for*/
+    height: 100%;
+    background-color: rgb(248, 248, 248);
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 80px);
-    grid-template-rows: 50px repeat(3,80px) 50px; /*height of each row*/
+    /*height of each row*/
+    grid-template-rows: 50px repeat(3, 80px) 50px;
+    gap: 5px;
 }
 
-.grid div {
-    margin: 10px;
-    background-color: rgb(255, 243, 227);
+/* Turn styles */
+
+.turn {
+    /*Alignment within the grid*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: center;
+
+    /*Alignment for content within the container*/
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    color: rgb(22, 22, 22);
+}
+
+.turn p {
+    font-size: 16px;
+}
+
+.turn i {
+    width: 1.2rem;
+    font-size: 1.6rem;
+    animation: 0.5s ease-in-out turn-icon-animation;
+}
+
+@keyframes turn-icon-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* New game button styles */
+
+.menu {
+    /* Relative position so the drop-down menu (position:absolute) has a relative reference*/
+    position: relative;
+}
+
+.menu-btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(248, 248, 248);
+    background-color: rgb(22, 22, 22);
+}
+
+.menu-btn:focus,
+.menu-btn:hover {
+    background-color: rgb(211, 211, 211);
+    color: rgb(22, 22, 22);
+}
+
+/* Tic-tac-toe board styles */
+
+.square {
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square:hover {
+    cursor: pointer;
+    opacity: 90%;
+}
+
+/* Score tracker styles*/
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score p {
+    font-size: 16px;
+}
+
+.score span {
+    font-size: 14px;
+}
+
+/*Desktop styles*/
+
+@media (min-width: 768px) {
+    .grid {
+        width: 500px;
+        grid-template-columns: repeat(3, 150px);
+        grid-template-rows: 50px repeat(3, 150px) 50px;
+        gap: 20px;
+    }
 }

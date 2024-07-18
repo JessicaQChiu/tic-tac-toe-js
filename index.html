@@ -1,32 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/cb1e76cda3.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Tic-Tac-Toe JS</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <main>
-        <div class="grid">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+      <div class="grid">
+        
+        <!-- Turn indicator -->
+        <div class="turn">
+          <i class="fa-solid fa-x"></i>
+          <p>Player 1</p>
         </div>
 
+        <!-- New game button -->
+        <div class="menu">
+          <button class="menu-btn">New Game</button>
+        </div>
+
+        <!-- Tic-tac-toe board -->
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+
+        <!-- Score tracker -->
+        <div class="score">
+          <span data-id="p1-wins">0</span>
+          <p>Player 1</p>
+        </div>
+        <div class="score">
+          <span data-id="tie">0</span>
+          <p>Tie</p>
+        </div>
+        <div class="score">
+          <span data-id="p2-wins">0</span>
+          <p>Player 2</p>
+        </div>
+      </div>
     </main>
-</body>
+
+    <!-- Footer -->
+    <footer>
+      <p>footer text</p>
+    </footer>
+  
+  </body>
 </html>
